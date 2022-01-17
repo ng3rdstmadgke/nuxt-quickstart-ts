@@ -1,77 +1,57 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <v-card class="logo py-4 d-flex justify-center">
-        <NuxtLogo />
-        <VuetifyLogo />
-      </v-card>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+<div>
+  <v-row>
+    <v-col class="text-center">
+      <VuetifyLogo></VuetifyLogo>
+    </v-col>
+    <v-col class="text-center">
+      <NuxtLogo></NuxtLogo>
     </v-col>
   </v-row>
+
+  <v-list dense>
+    <v-subheader>Links</v-subheader>
+    <v-list-item-group v-model="selectedItem" color="primary">
+      <v-list-item
+      v-for="(item, i) in items"
+      :to="item.to"
+      :key="i"
+      >
+        <v-list-item-icon>
+          <v-icon>{{item.icon}}</v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+            <v-list-item-title>{{item.title}}</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+    </v-list-item-group>
+  </v-list>
+</div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      selectedItem: 1,
+      items: [
+        {
+          icon: 'mdi-home',
+          title: 'Home',
+          to: '/'
+        },
+        {
+          icon: 'mdi-login',
+          title: 'Login',
+          to: '/login'
+        },
+        {
+          icon: 'mdi-home',
+          title: 'Users',
+          to: '/users/'
+        }
+      ]
+    }
+  }
+}
+</script>

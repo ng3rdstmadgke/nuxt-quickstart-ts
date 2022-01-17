@@ -97,14 +97,19 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
+          icon: 'mdi-home',
+          title: 'Home',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          icon: 'mdi-login',
+          title: 'Login',
+          to: '/login'
+        },
+        {
+          icon: 'mdi-home',
+          title: 'Users',
+          to: '/users/'
         }
       ],
       miniVariant: false,
