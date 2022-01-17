@@ -24,7 +24,10 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  // レンダリング前に読み込みたいプラグインを定義
   plugins: [
+    '@/plugins/axios.ts',
+    //'@/plugins/auth.ts',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -43,6 +46,9 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+
+    // https://github.com/microcipcip/cookie-universal/tree/master/packages/cookie-universal-nuxt
+    'cookie-universal-nuxt',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
