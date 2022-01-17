@@ -68,5 +68,11 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  // ビルド時にモダンバンドルとレガシーバンドルの2つを生成し、レガシーブラウザからのアクセスにはレガシーバンドルを返す
+  // このオプションは `npm run dev` では動作しない。 `npm run build && npm run start` である必要がある
+  // modernプロパティ: https://nuxtjs.org/ja/docs/configuration-glossary/configuration-modern/
+  // modernモード: https://cli.vuejs.org/guide/browser-compatibility.html#modern-mode
+  // modern: true,
 }
