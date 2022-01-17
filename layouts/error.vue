@@ -6,20 +6,28 @@
   </v-app>
 </template>
 
-<script>
+<script lang="ts">
 /**
  * このページは error({statusCode: xxx message: "..."}) で呼び出される。
  * パラメータ中のstatusCode, messageプロパティは必須
  * errorメソッド: https://nuxtjs.org/ja/docs/internals-glossary/context#error
  */
-export default {
+
+import Vue, { PropOptions } from 'vue'
+
+interface Error {
+  statusCode: number,
+  message: string,
+}
+
+export default Vue.extend({
   layout: 'empty',
 
   props: {
     error: {
       type: Object,
-      default: null
-    }
+      required: true
+    } as PropOptions<Error>
   },
 
   data () {
@@ -36,5 +44,5 @@ export default {
       title: `${this.error.statusCode} ${this.error.message}`
     }
   }
-}
+})
 </script>

@@ -39,6 +39,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
+  // モジュールディレクトリ: https://nuxtjs.org/ja/docs/directory-structure/modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
