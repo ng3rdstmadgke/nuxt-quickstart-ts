@@ -41,12 +41,7 @@ export default {
           to: '/'
         },
         {
-          icon: 'mdi-login',
-          title: 'Login',
-          to: '/login'
-        },
-        {
-          icon: 'mdi-home',
+          icon: 'mdi-account',
           title: 'Users',
           to: '/users/'
         }

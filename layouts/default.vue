@@ -77,7 +77,7 @@ export default Vue.extend({
           to: '/'
         },
         {
-          icon: 'mdi-home',
+          icon: 'mdi-account',
           title: 'Users',
           to: '/users/'
         }

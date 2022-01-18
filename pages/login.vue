@@ -19,7 +19,7 @@
     ></v-text-field>
     <v-text-field
       v-model="password"
-      :rules="usernameRules"
+      :rules="passwordRules"
       label="Password"
       required
       type="password"
