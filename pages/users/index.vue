@@ -57,7 +57,7 @@ interface UsersData {
  * https://nuxtjs.org/docs/directory-structure/pages/#properties
  */
 export default {
-  middleware: ['auth'], // middleware/auth.js
+  middleware: ['auth'],  // middleware/auth.tsで未認証時にログインページにリダイレクトします
 
   data(): UsersData {
     return {
@@ -74,6 +74,7 @@ export default {
    * https://nuxtjs.org/ja/docs/features/data-fetching/#async-data
    */
   async asyncData(context: Context) {
+    // plugins/axios.tsによって、tokenが存在する場合は Authorization ヘッダを付与してリクエストします。
     return context.$axios.get("http://127.0.0.1:8000/api/v1/users/")
       .then((res: AxiosResponse)=> {
         return {users: res.data}
