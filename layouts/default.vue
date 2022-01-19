@@ -2,9 +2,7 @@
   <v-app dark>
     <v-navigation-drawer
       v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
+      temporary
       app
     >
       <v-list>
@@ -25,7 +23,6 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar
-      :clipped-left="clipped"
       fixed
       app
     >
@@ -67,7 +64,6 @@ export default Vue.extend({
   },
   data () {
     return {
-      clipped: false,
       drawer: false,
       fixed: false,
       items: [
@@ -82,7 +78,6 @@ export default Vue.extend({
           to: '/users/'
         }
       ],
-      miniVariant: false,
       title: 'QuickStart',
     }
   },
