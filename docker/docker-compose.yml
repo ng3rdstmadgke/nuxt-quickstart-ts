@@ -1,7 +1,7 @@
 ---
 version: '3.2'
 services:
-  app:
+  nuxt:
     image: ${APP_NAME}-nuxt:latest
     container_name: nuxt
     volumes:
@@ -16,5 +16,5 @@ services:
     image: ${APP_NAME}-nginx:latest
     container_name: nginx
     depends_on:
-      - app
+      - nuxt
     network_mode: host
